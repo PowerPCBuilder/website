@@ -1,5 +1,5 @@
 let data = require('./itemDataNAS.json');
-data = data.filter(a=>a.Brand&&a['Form Factor']&&a['Form Factor']!='N/A'&&a['Included HDD Capacity']&&a['Included HDD Capacity']!='N/A');
+data = data.filter(a=>a.Brand&&a['Included HDD Capacity']!='N/A');
 
 // Function to generate HTML string for the table
 const generateTableHTML = (data) => {

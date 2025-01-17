@@ -228,3 +228,10 @@ a:hover {
 #nasbox .subjects .subject-card ul li a:hover {
     text-decoration: underline;
 }
+
+
+
+.filter-group label {
+    font-weight: bold;
+    margin: 10px 0;
+}
