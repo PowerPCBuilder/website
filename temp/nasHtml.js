@@ -1,6 +1,16 @@
 let data = require('./itemDataNAS.json');
 data = data.filter(a=>a.Brand&&a['Form Factor']&&a['Form Factor']!='N/A'&&a['Included HDD Capacity']&&a['Included HDD Capacity']!='N/A');
 
+data.forEach(a=>{
+  a["Form Factor"] = a["Form Factor"].split(';')[0].replace('bay', 'Bay');
+  if(!a["Form Factor"].includes('Bay')||a["Form Factor"].includes('Flash')){
+    a["Form Factor"] = 'Flash';
+  }
+  if (a['Brand']=='TerraMaster'){
+    a['Brand'] = 'Terra Master';
+  }
+});
+
 // Function to generate HTML string for the table
 const generateTableHTML = (data) => {
     const headers = [
@@ -33,7 +43,7 @@ const generateTableHTML = (data) => {
         if (header === "Price") {
           html += `<td><a href='https://www.newegg.com/p/${item.itemNumber}' target='_blank'>$${item.price}</a></td>`;
         } else {
-          html += `<td>${item[header] || "N/A"}</td>`;
+          html += `<td>${item[header] || ""}</td>`;
         }
       });
       html += "</tr>";

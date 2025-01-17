@@ -1,0 +1,32 @@
+# Logs and databases
+*.log
+*.sqlite3
+*.sqlite3-journal
+
+# Jekyll generated site
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Temporary files
+.DS_Store
+Thumbs.db
+
+# Gem dependencies
+/.bundle/
+/vendor/
+Gemfile.lock
+
+# Node dependencies
+node_modules/
+
+# Other temporary files
+*.swp
+*.swo
+*~
+*.tmp
+
+# System files
+.idea/
+.vscode/
